@@ -7,6 +7,10 @@ module Nokogiri
       alias_method :to_s, :content
       alias_method :content=, :value=
 
+      def deconstruct_keys(keys)
+        { name: name, value: value, namespace: namespace }
+      end
+
       private
 
       def inspect_attributes

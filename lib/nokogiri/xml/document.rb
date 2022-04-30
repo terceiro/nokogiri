@@ -415,6 +415,10 @@ module Nokogiri
         Nokogiri::CSS::XPathVisitor::DoctypeConfig::XML
       end
 
+      def deconstruct_keys(keys)
+        { root: root }
+      end
+
       private
 
       IMPLIED_XPATH_CONTEXTS = ["//"].freeze # :nodoc:

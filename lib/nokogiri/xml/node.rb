@@ -1310,6 +1310,14 @@ module Nokogiri
         end
       end
 
+      def deconstruct_keys(keys)
+        { name: name, attributes: attribute_nodes, children: children, namespace: namespace }.tap do |d|
+          if keys&.include?(:content)
+            d[:content] = content
+          end
+        end
+      end
+
       # :section:
 
       protected

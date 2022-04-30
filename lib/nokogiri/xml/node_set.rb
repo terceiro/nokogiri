@@ -360,6 +360,10 @@ module Nokogiri
 
       alias_method :+, :|
 
+      def deconstruct
+        to_a
+      end
+
       IMPLIED_XPATH_CONTEXTS = [".//", "self::"].freeze # :nodoc:
     end
   end
